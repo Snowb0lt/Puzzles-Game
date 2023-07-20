@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,6 +8,8 @@ public class PressurePad : MonoBehaviour
 {
     [SerializeField] private float _checkRadius;
     [SerializeField] private LayerMask _pickableLayer;
+    public PushButton button;
+    public TextMeshProUGUI buttonText;
 
     public UnityEvent onCubePlaced;
     public UnityEvent onCubeRemoved;
@@ -22,6 +25,8 @@ public class PressurePad : MonoBehaviour
             if (collider.CompareTag("PickCube"))
             {   
                 onCubePlaced?.Invoke();
+                buttonText.text = "UNLOCKED";
+                buttonText.color = Color.green;
                 break;
             }
         }
@@ -31,6 +36,8 @@ public class PressurePad : MonoBehaviour
         if (collision.gameObject.CompareTag("PickCube"))
         {
             onCubeRemoved?.Invoke();
+            buttonText.text = "LOCKED";
+            buttonText.color = Color.yellow;
         }
     }
 
