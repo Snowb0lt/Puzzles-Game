@@ -3733,7 +3733,7 @@ Transform:
   - {fileID: 890007684}
   - {fileID: 779886517}
   m_Father: {fileID: 1203008573}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &255943164
 GameObject:
@@ -10288,6 +10288,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e78d35a87eaff3e4ca5959b5ba8b8dc5, type: 3}
+--- !u!1 &702251100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 847180578409718330, guid: e78d35a87eaff3e4ca5959b5ba8b8dc5,
+    type: 3}
+  m_PrefabInstance: {fileID: 702251099}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &702251101 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5357812024038653919, guid: e78d35a87eaff3e4ca5959b5ba8b8dc5,
+    type: 3}
+  m_PrefabInstance: {fileID: 702251099}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &702251102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702251100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97eecca53d4570d4f984efee9fed95ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _agent: {fileID: 0}
+  _target: {fileID: 819049168}
+  _targetPoints: []
+  _enemyEye: {fileID: 702251101}
+  _playerCheckDistance: 3
+  _checkRadius: 0.4
+  isIdle: 1
+  isPlayerFound: 0
+  isCloseToPlayer: 0
+  isRandomPointActive: 0
+  player: {fileID: 819049168}
 --- !u!1 &702467524
 GameObject:
   m_ObjectHideFlags: 0
@@ -17339,9 +17374,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 254370811}
   - {fileID: 1155122807}
   - {fileID: 1327355421}
-  - {fileID: 254370811}
   - {fileID: 2060093256}
   - {fileID: 1010959159}
   - {fileID: 1616722089}
