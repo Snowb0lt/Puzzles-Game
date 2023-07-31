@@ -17,7 +17,7 @@ public class GoalArea : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (gameObject.CompareTag("Friend")) 
+        if (other.CompareTag("Friend")) 
         {
             door.UnlockDoor();
             buttonText.text = "UNLOCKED";
