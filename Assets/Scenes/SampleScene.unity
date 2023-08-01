@@ -5449,6 +5449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
+  _playerInput: {fileID: 1394788049}
 --- !u!114 &819049177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5477,6 +5478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41514683ff5536148819ac18ab862cc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInput: {fileID: 1394788049}
   clip: {fileID: 0}
 --- !u!1 &824030762
 GameObject:

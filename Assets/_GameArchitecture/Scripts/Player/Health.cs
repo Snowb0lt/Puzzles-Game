@@ -6,6 +6,7 @@ using System;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float _maxHealth;
+    [SerializeField] private GameObject _playerInput;
     public Action<float> OnHealthUpdated;
     public Action OnDeath;
     private float _health;
@@ -27,7 +28,7 @@ public class Health : MonoBehaviour
         {
             IsDead = true;
             OnDeath?.Invoke();
-            
+            _playerInput.gameObject.SetActive(false);
             _health = 0;
         }
         OnHealthUpdated?.Invoke(_health);

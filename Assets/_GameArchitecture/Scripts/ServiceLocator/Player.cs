@@ -5,6 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private IAudioManager audioManager;
+    [SerializeField] GameObject playerInput;
+
+    public static Player _instance;
 
     [SerializeField] AudioClip clip;
     // Start is called before the first frame update
