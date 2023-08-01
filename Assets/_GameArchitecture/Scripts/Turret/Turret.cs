@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.UIElements;
 
 public class Turret : MonoBehaviour
 {
@@ -10,7 +12,12 @@ public class Turret : MonoBehaviour
     [SerializeField]private Transform[] points;
 
     [Header("Ray Casting")]
-    [SerializeField] Vector3 RayOrigin;
+    [SerializeField] GameObject RayOrigin;
+    [SerializeField] GameObject RayEnd;
+
+    [Header("Health Aspects")]
+    [SerializeField] Health health;
+    [SerializeField] float damage;
 
 
     // Start is called before the first frame update
@@ -36,11 +43,18 @@ public class Turret : MonoBehaviour
 
     public void CheckForPlayer()
     {
-        Ray ray = new Ray(points[0].position, points[1].position);
+        Ray ray = new Ray(RayOrigin.transform.position, Vector3.forward);
 
         if(Physics.Raycast(ray, out RaycastHit hit))
         {
-            Debug.Log(hit.collider.gameObject.name + " was Hit");
+            if (hit.collider.tag == "Player")
+            {
+                health.DeductHealth(damage);
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     public Action<float> OnHealthUpdated;
     public Action OnDeath;
     private float _health;
+    public static Health _instance;
     public bool IsDead { get; private set; }
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class Health : MonoBehaviour
         {
             IsDead = true;
             OnDeath?.Invoke();
+            
             _health = 0;
         }
         OnHealthUpdated?.Invoke(_health);
