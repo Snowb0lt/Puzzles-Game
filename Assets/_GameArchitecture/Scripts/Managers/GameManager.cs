@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private LevelManager[] _levels;
+    [SerializeField] private UIManager UiManager;
 
     public static GameManager _instance;
 
@@ -12,6 +13,8 @@ public class GameManager : MonoBehaviour
     private LevelManager _currentLevel;
     private int _currentLevelIndex = 0;
     private bool _isInputActive = true;
+
+    public bool speedRunStarted;
 
 
     private void Awake()
@@ -135,5 +138,13 @@ public class GameManager : MonoBehaviour
         LevelEnd,
         GameOver,
         GameEnd
+    }
+
+    public void StartSpeedRun()
+    {
+        if (speedRunStarted)
+        {
+            UiManager.StartSpeedRun(); 
+        }
     }
 }

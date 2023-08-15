@@ -10,6 +10,12 @@ public class UIManager : MonoBehaviour
     [Header("UI Elements")]
     public TMP_Text _txtHealth;
     public GameObject _gameOverText;
+
+    [Header("Timer")]
+    private float timerSeconds = 0;
+    public TMP_Text _timerText;
+    public GameObject _timerObj;
+    private int timerMinutes;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,5 +41,27 @@ public class UIManager : MonoBehaviour
     void OnDeath()
     {
         _gameOverText.SetActive(true);
+    }
+
+    public void StartSpeedRun()
+    {
+        timerSeconds = 00;
+        _timerObj.SetActive(true);       
+    }
+
+    private void Update()
+    {
+        timerSeconds += 1 * Time.deltaTime;
+        UpdateTimer();
+    }
+
+    private void UpdateTimer()
+    {
+        _timerText.text = "TIME: " + timerMinutes + ":" + (int)timerSeconds;
+        if (timerSeconds >= 60)
+        {
+            timerSeconds = 00;
+            timerMinutes++;
+        }
     }
 }
