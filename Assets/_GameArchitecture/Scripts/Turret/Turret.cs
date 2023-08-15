@@ -9,10 +9,9 @@ public class Turret : MonoBehaviour
 {
     [Header("Turret Line")]
     [SerializeField]private LineRenderer turretLine;
-    [SerializeField]private Transform[] points;
 
     [Header("Ray Casting")]
-    [SerializeField] GameObject RayOrigin;
+    [SerializeField] Transform RayOrigin;
     [SerializeField] GameObject RayEnd;
 
     [Header("Health Aspects")]
@@ -24,29 +23,28 @@ public class Turret : MonoBehaviour
     void Awake()
     {
         turretLine = GetComponent<LineRenderer>();
-    }
-
-    public void LineSetup(Transform[] points)
-    {
-        turretLine.positionCount = points.Length;
-        this.points = points;
+        
     }
 
     public void Update()
-    { for (int i = 0; i < points.Length; i++)
-        {
-            turretLine.SetPosition(i, points[i].position);
-        }
-
-    CheckForPlayer();
+    {
+        //for (int i = 0; i < points.Length; i++)
+        //{
+        //    turretLine.SetPosition(i, points[i].position);
+        //}
+        turretLine.SetPosition(0, RayOrigin.transform.position);
+        CheckForPlayer();
     }
 
     public void CheckForPlayer()
     {
-        Ray ray = new Ray(RayOrigin.transform.position, Vector3.forward);
+        Ray ray = new Ray(RayOrigin.transform.position, Vector3.right);
+        turretLine.SetPosition(1, RayEnd.transform.position);
 
-        if(Physics.Raycast(ray, out RaycastHit hit))
+
+        if (Physics.Raycast(ray, out RaycastHit hit))
         {
+            turretLine.SetPosition(1, hit.point);
             if (hit.collider.tag == "Player")
             {
                 health.DeductHealth(damage);
