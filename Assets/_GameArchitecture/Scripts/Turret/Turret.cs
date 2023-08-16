@@ -18,6 +18,9 @@ public class Turret : MonoBehaviour
     [SerializeField] Health health;
     [SerializeField] float damage;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource laserAudio;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -38,7 +41,7 @@ public class Turret : MonoBehaviour
 
     public void CheckForPlayer()
     {
-        Ray ray = new Ray(RayOrigin.transform.position, Vector3.right);
+        Ray ray = new Ray(RayOrigin.transform.position, Vector3.forward);
         turretLine.SetPosition(1, RayEnd.transform.position);
 
 
@@ -48,9 +51,11 @@ public class Turret : MonoBehaviour
             if (hit.collider.tag == "Player")
             {
                 health.DeductHealth(damage);
+                laserAudio.Play();
             }
             else
             {
+                laserAudio.Stop();
                 return;
             }
         }

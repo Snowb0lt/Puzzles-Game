@@ -33,18 +33,18 @@ public class Lift : MonoBehaviour
         {
             _targetPosition = transform.localPosition - new Vector3(0, _moveDistance, 0);
             _isUp = false;
-            _liftMusic.Play();
             //LiftMusic();
         }
         else
         {
             _targetPosition = transform.localPosition + new Vector3(0, _moveDistance, 0);
             _isUp = true;
-            _liftMusic.Play();
             //LiftMusic();
         }
         _isMoving = true;
         _soundPlaying = true;
+        _liftMusic.Play();
+
     }
 
 
@@ -59,6 +59,7 @@ public class Lift : MonoBehaviour
         {
             _isMoving = false;
             _soundPlaying = false;
+            _liftMusic.Stop();
         }
     }
 }

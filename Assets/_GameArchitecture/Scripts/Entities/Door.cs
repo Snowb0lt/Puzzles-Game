@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Door : MonoBehaviour
@@ -53,6 +54,7 @@ public class Door : MonoBehaviour
     public void UnlockDoor()
     {
         _isLocked = false;
+
     }
 
     public void OpenDoor(bool state)
