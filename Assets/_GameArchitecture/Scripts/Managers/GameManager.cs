@@ -118,6 +118,7 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
+
         Debug.Log("Game Over!");
     }
 
@@ -138,13 +139,5 @@ public class GameManager : MonoBehaviour
         LevelEnd,
         GameOver,
         GameEnd
-    }
-
-    public void StartSpeedRun()
-    {
-        if (speedRunStarted)
-        {
-            UiManager.StartSpeedRun(); 
-        }
     }
 }

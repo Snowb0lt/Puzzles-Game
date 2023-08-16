@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using static GameManager;
 
 public class UIManager : MonoBehaviour
 {
@@ -41,6 +42,7 @@ public class UIManager : MonoBehaviour
     void OnDeath()
     {
         _gameOverText.SetActive(true);
+        //GameManager._instance.ChangeState(GameState.GameOver, LevelManager._currentLevel);
     }
 
     public void StartSpeedRun()
