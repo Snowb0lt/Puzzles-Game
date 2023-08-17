@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShootInteractor : Interactor
@@ -8,6 +9,11 @@ public class ShootInteractor : Interactor
     public MeshRenderer gunRenderer;
     public Color bulletGunColor;
     public Color rocketGunColor;
+
+    public bool _inBulletMode;
+    public bool _inRocketMode;
+    public AudioSource bulletGunAudio;
+    public AudioSource rocketGunAudio;
 
 
 
@@ -49,16 +55,28 @@ public class ShootInteractor : Interactor
         if (_input.weapon1Pressed)
         {
             _currentStrategy = new BulletShootStrategy(this);
+            _inBulletMode = true;
+            _inRocketMode = false;
         }
 
         if (_input.weapon2Pressed)
         {
             _currentStrategy = new RocketShootStrategy(this);
+            _inBulletMode =false;
+            _inRocketMode = true;
         }
 
         if (_input.primaryShootPressed && _currentStrategy != null)
         {
             _currentStrategy.Shoot();
+            if (_inBulletMode)
+            {
+                bulletGunAudio.Play();
+            }
+            if (_inRocketMode)
+            {
+                rocketGunAudio.Play();
+            }
         }
     }
 
