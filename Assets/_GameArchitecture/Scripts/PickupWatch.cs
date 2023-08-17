@@ -6,6 +6,7 @@ public class PickupWatch : MonoBehaviour
 {
     [SerializeField] private float spinSpeed = 1;
     [SerializeField] UIManager uIManager;
+    [SerializeField] private AudioSource tickingSound;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,7 @@ public class PickupWatch : MonoBehaviour
         {
             GameManager._instance.speedRunStarted = true;
             uIManager.StartSpeedRun();
-            Debug.Log("Speedrun Start");
+            tickingSound.Play();
             Destroy(gameObject);
         }
     }

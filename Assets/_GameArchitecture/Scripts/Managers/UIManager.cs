@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using static GameManager;
+using static System.Net.WebRequestMethods;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -17,6 +19,17 @@ public class UIManager : MonoBehaviour
     public TMP_Text _timerText;
     public GameObject _timerObj;
     private int timerMinutes;
+
+    [Header("Fade To Black")]
+    [SerializeField] GameObject FTB;
+    [SerializeField] private int fadeDuration = 1;
+    [SerializeField] private Image blackOutScreen;
+
+    [Header("Ending UI Elements")]
+    [SerializeField] private GameObject endingText;
+    [SerializeField] private GameObject timeTextObj;
+    [SerializeField] private TMP_Text timeText;
+    [SerializeField] private Button menuButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -64,6 +77,31 @@ public class UIManager : MonoBehaviour
         {
             timerSeconds = 00;
             timerMinutes++;
+        }
+    }
+    public void FadeToBlack()
+    {
+        FTB.SetActive(true);
+        StartCoroutine(ColorFade(Color.clear, Color.black, fadeDuration));
+        endingText.SetActive(true);
+        if (GameManager._instance.speedRunStarted == true)
+        {
+            timeTextObj.SetActive(true);
+            timeText.text = "FINAL TIME: " + timerMinutes + ":" + (int)timerSeconds;
+        }
+        menuButton.gameObject.SetActive(true);
+        
+        
+ 
+    }
+    IEnumerator ColorFade(Color start, Color end, float duration)
+    {
+        for (float t = 0; t < duration; t += Time.deltaTime)
+        {
+            float normalizedTime = t / duration;
+
+            blackOutScreen.color = Color.Lerp(start, end, normalizedTime);
+            yield return null;
         }
     }
 }
