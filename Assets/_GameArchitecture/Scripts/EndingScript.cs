@@ -9,6 +9,7 @@ public class EndingScript : MonoBehaviour
 {
     
     [SerializeField] UIManager uIManager;
+    [SerializeField] GameManager gameManager;
     
 
     private void OnTriggerEnter(Collider other)
@@ -16,7 +17,14 @@ public class EndingScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             uIManager.FadeToBlack();
+            Invoke("FreezeTheGame", 3);
+            
         }
     }
 
+    void FreezeTheGame()
+    {
+        gameManager.FreezeGame();
+        Cursor.visible = true;
+    }
 }

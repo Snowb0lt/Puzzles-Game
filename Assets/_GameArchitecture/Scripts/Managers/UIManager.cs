@@ -9,6 +9,10 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private Health _playerHealth;
+    [SerializeField] private GameManager _gameManager;
+
+    [Header("PlayerInput")]
+    public GameObject playerInput;
 
     [Header("UI Elements")]
     public TMP_Text _txtHealth;
@@ -34,6 +38,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         _gameOverText.SetActive(false);
+
     }
 
     private void OnEnable()
@@ -55,6 +60,8 @@ public class UIManager : MonoBehaviour
     void OnDeath()
     {
         _gameOverText.SetActive(true);
+        _gameManager.FreezeGame();
+        Cursor.visible = true;
         //GameManager._instance.ChangeState(GameState.GameOver, LevelManager._currentLevel);
     }
 
@@ -83,6 +90,12 @@ public class UIManager : MonoBehaviour
     {
         FTB.SetActive(true);
         StartCoroutine(ColorFade(Color.clear, Color.black, fadeDuration));
+        Invoke("DisplayEndMenu",fadeDuration);
+
+    }
+
+    private void DisplayEndMenu()
+    {
         endingText.SetActive(true);
         if (GameManager._instance.speedRunStarted == true)
         {
@@ -90,10 +103,8 @@ public class UIManager : MonoBehaviour
             timeText.text = "FINAL TIME: " + timerMinutes + ":" + (int)timerSeconds;
         }
         menuButton.gameObject.SetActive(true);
-        
-        
- 
     }
+
     IEnumerator ColorFade(Color start, Color end, float duration)
     {
         for (float t = 0; t < duration; t += Time.deltaTime)

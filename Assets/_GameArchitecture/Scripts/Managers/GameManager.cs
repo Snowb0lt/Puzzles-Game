@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private LevelManager[] _levels;
     [SerializeField] private UIManager UiManager;
+    [SerializeField] private CameraMovementBehaviour camMove;
 
     public static GameManager _instance;
 
@@ -44,6 +45,12 @@ public class GameManager : MonoBehaviour
         {
             ChangeState(GameState.Briefing, _levels[_currentLevelIndex]);
         }
+    }
+
+    public void FreezeGame()
+    {
+        camMove.MouseMovement();
+        Time.timeScale = 0;
     }
     //Change Current Game State
 

@@ -34,4 +34,10 @@ public class CameraMovementBehaviour : MonoBehaviour
         _camXRotation = Mathf.Clamp(_camXRotation, _yTurnMin, _yTurnMax);
         transform.localRotation = Quaternion.Euler(_camXRotation, 0, 0);
     }
+
+    public void MouseMovement()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+    }
 }
