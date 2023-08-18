@@ -8,9 +8,15 @@ using UnityEngine.UI;
 public class EndingScript : MonoBehaviour
 {
     
-    [SerializeField] UIManager uIManager;
-    [SerializeField] GameManager gameManager;
-    
+    UIManager uIManager;
+    GameManager gameManager;
+
+    private void Awake()
+    {
+        //Singleton setup
+        uIManager = UIManager.GetInstance();
+        gameManager = GameManager.GetInstance();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
