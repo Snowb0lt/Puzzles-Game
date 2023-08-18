@@ -8,7 +8,7 @@ public class Lift : MonoBehaviour
     [SerializeField] private float _liftSpeed;
     [SerializeField] private float _accuracy = 0.05f;
     [SerializeField] private bool _isUp;
-    [SerializeField] private bool _soundPlaying;
+    private bool _soundPlaying;
     [SerializeField] private AudioSource _liftMusic;
 
 

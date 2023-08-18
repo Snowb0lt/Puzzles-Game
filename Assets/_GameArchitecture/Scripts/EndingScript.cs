@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class EndingScript : MonoBehaviour
 {
     
     UIManager uIManager;
     GameManager gameManager;
+
+    public UnityEvent GameEnd;
 
     private void Awake()
     {
@@ -22,6 +25,7 @@ public class EndingScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            GameEnd?.Invoke();
             uIManager.FadeToBlack();
             Invoke("FreezeTheGame", 3);
             

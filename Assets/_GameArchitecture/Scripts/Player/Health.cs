@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using System;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] private float _maxHealth;
-    [SerializeField] private GameObject _playerInput;
     public Action<float> OnHealthUpdated;
     public Action OnDeath;
     private float _health;
     public static Health _instance;
+
+    public UnityEvent GameOver;
     public bool IsDead { get; private set; }
     // Start is called before the first frame update
     void Start()
@@ -28,7 +30,7 @@ public class Health : MonoBehaviour
         {
             IsDead = true;
             OnDeath?.Invoke();
-            _playerInput.gameObject.SetActive(false);
+            GameOver?.Invoke();
             _health = 0;
         }
         OnHealthUpdated?.Invoke(_health);

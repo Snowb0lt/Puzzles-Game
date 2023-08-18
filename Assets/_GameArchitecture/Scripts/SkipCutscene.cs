@@ -7,6 +7,8 @@ using UnityEngine.Events;
 public class SkipCutscene : MonoBehaviour
 {
     public UnityEvent StartLevel;
+
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -18,6 +20,7 @@ public class SkipCutscene : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            
             StartLevel?.Invoke();
         }
     }

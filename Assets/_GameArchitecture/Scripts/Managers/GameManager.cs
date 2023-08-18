@@ -5,7 +5,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private LevelManager[] _levels;
-    [SerializeField] private UIManager UiManager;
     [SerializeField] private CameraMovementBehaviour camMove;
 
     public static GameManager _instance;
@@ -20,6 +19,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        UIManager.GetInstance();
         if (_instance != null && _instance != this)
         {
             Destroy(gameObject);
@@ -125,12 +125,13 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-
+        ChangeState(GameState.GameOver, _currentLevel);
         Debug.Log("Game Over!");
     }
 
     private void GameEnd()
     {
+        ChangeState(GameState.GameEnd, _currentLevel);
         Debug.Log("Game has ended, you win!");
     }
 
