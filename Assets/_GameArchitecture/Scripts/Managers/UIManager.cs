@@ -20,12 +20,6 @@ public class UIManager : MonoBehaviour
     public TMP_Text _txtHealth;
     public GameObject _gameOverText;
 
-    [Header("Timer")]
-    private float timerSeconds = 0;
-    public TMP_Text _timerText;
-    public GameObject _timerObj;
-    private int timerMinutes;
-
     [Header("Fade To Black")]
     [SerializeField] GameObject FTB;
     [SerializeField] private int fadeDuration = 1;
@@ -33,8 +27,6 @@ public class UIManager : MonoBehaviour
 
     [Header("Ending UI Elements")]
     [SerializeField] private GameObject endingText;
-    [SerializeField] private GameObject timeTextObj;
-    [SerializeField] private TMP_Text timeText;
     [SerializeField] private Button menuButton;
     // Start is called before the first frame update
     void Start()
@@ -86,27 +78,7 @@ public class UIManager : MonoBehaviour
         //GameManager._instance.ChangeState(GameState.GameOver, LevelManager._currentLevel);
     }
 
-    public void StartSpeedRun()
-    {
-        timerSeconds = 00;
-        _timerObj.SetActive(true);       
-    }
-
-    private void Update()
-    {
-        timerSeconds += 1 * Time.deltaTime;
-        UpdateTimer();
-    }
-
-    private void UpdateTimer()
-    {
-        _timerText.text = "TIME: " + timerMinutes + ":" + (int)timerSeconds;
-        if (timerSeconds >= 60)
-        {
-            timerSeconds = 00;
-            timerMinutes++;
-        }
-    }
+    
     public void FadeToBlack()
     {
         FTB.SetActive(true);
@@ -118,13 +90,11 @@ public class UIManager : MonoBehaviour
     private void DisplayEndMenu()
     {
         endingText.SetActive(true);
-        if (GameManager._instance.speedRunStarted == true)
-        {
-            timeTextObj.SetActive(true);
-            timeText.text = "FINAL TIME: " + timerMinutes + ":" + (int)timerSeconds;
-        }
+        SpeedRunScript._instance.SpeedRunUpdate();
         menuButton.gameObject.SetActive(true);
     }
+
+
 
     IEnumerator ColorFade(Color start, Color end, float duration)
     {
@@ -137,3 +107,5 @@ public class UIManager : MonoBehaviour
         }
     }
 }
+
+

@@ -11697,7 +11697,6 @@ MonoBehaviour:
   - {fileID: 1999924472}
   - {fileID: 1010714251}
   - {fileID: 1254035154}
-  UiManager: {fileID: 1615324684}
   camMove: {fileID: 330585548}
   speedRunStarted: 0
 --- !u!114 &568239418
@@ -30459,6 +30458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1615324685}
   - component: {fileID: 1615324684}
+  - component: {fileID: 1615324686}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -30483,14 +30483,10 @@ MonoBehaviour:
   playerInput: {fileID: 0}
   _txtHealth: {fileID: 981565265}
   _gameOverText: {fileID: 954761684}
-  _timerText: {fileID: 1155837417}
-  _timerObj: {fileID: 1155837415}
   FTB: {fileID: 712147934}
   fadeDuration: 1
   blackOutScreen: {fileID: 712147936}
   endingText: {fileID: 547962291}
-  timeTextObj: {fileID: 547962291}
-  timeText: {fileID: 1223236723}
   menuButton: {fileID: 119711502}
 --- !u!4 &1615324685
 Transform:
@@ -30507,6 +30503,20 @@ Transform:
   m_Father: {fileID: 895302193}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1615324686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615324683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8bfda4d95761494c84854395edd9a8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeText: {fileID: 1155837417}
+  timeTextObj: {fileID: 1155837415}
 --- !u!1 &1616722088
 GameObject:
   m_ObjectHideFlags: 0
@@ -39319,6 +39329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spinSpeed: 0.25
   uIManager: {fileID: 1615324684}
+  speedRunScript: {fileID: 0}
   tickingSound: {fileID: 1155837419}
 --- !u!54 &2057681030
 Rigidbody:
