@@ -43,7 +43,6 @@ public class Door : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         _doorAnim.SetBool("Open", false);
-        //_doorMeshRenderer.material = _doorMaterial;
     }
 
     public void LockDoor()

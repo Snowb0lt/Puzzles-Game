@@ -57,15 +57,19 @@ public class PlayerInput : MonoBehaviour
         jumpPressed = jumpPressed || Input.GetButtonDown("Jump");
         activatePressed = activatePressed || Input.GetKeyDown(KeyCode.E);
 
+        commandPressed = commandPressed || Input.GetKeyDown(KeyCode.G);
+        
+        WeaponRelated();
+
+    }
+
+    private void WeaponRelated()
+    {
         weapon1Pressed = weapon1Pressed || Input.GetKeyDown(KeyCode.Alpha1);
         weapon2Pressed = weapon2Pressed || Input.GetKeyDown(KeyCode.Alpha2);
 
-        commandPressed = commandPressed || Input.GetKeyDown(KeyCode.G);
-
         primaryShootPressed = primaryShootPressed || Input.GetButtonDown("Fire1");
         secondaryShootPressed = secondaryShootPressed || Input.GetButtonDown("Fire2");
-
-
     }
 
     private void FixedUpdate()

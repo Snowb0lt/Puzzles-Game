@@ -20,14 +20,6 @@ public class UIManager : MonoBehaviour
     public TMP_Text _txtHealth;
     public GameObject _gameOverText;
 
-    [Header("Fade To Black")]
-    [SerializeField] GameObject FTB;
-    [SerializeField] private int fadeDuration = 1;
-    [SerializeField] private Image blackOutScreen;
-
-    [Header("Ending UI Elements")]
-    [SerializeField] private GameObject endingText;
-    [SerializeField] private Button menuButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -78,7 +70,11 @@ public class UIManager : MonoBehaviour
         //GameManager._instance.ChangeState(GameState.GameOver, LevelManager._currentLevel);
     }
 
-    
+
+    [Header("Fade To Black")]
+    [SerializeField] GameObject FTB;
+    [SerializeField] private int fadeDuration = 1;
+    [SerializeField] private Image blackOutScreen;
     public void FadeToBlack()
     {
         FTB.SetActive(true);
@@ -87,6 +83,9 @@ public class UIManager : MonoBehaviour
 
     }
 
+    [Header("Ending UI Elements")]
+    [SerializeField] private GameObject endingText;
+    [SerializeField] private Button menuButton;
     private void DisplayEndMenu()
     {
         endingText.SetActive(true);

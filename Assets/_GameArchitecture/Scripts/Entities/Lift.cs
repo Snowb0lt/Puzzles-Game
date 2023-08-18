@@ -14,15 +14,6 @@ public class Lift : MonoBehaviour
 
     private bool _isMoving;
     Vector3 _targetPosition;
-    
-    //public void LiftMusic()
-    //{
-    //    if (_soundPlaying) return;
-    //    if (!_soundPlaying)
-    //    {
-            
-    //    }
-    //}
 
     public void ActivateLift()
     {

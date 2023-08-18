@@ -8,12 +8,6 @@ public class GoalArea : MonoBehaviour
     public PushButton button;
     public TextMeshProUGUI buttonText;
     public Door door;
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Friend")) 
