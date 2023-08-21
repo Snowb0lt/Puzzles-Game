@@ -5,12 +5,13 @@ using UnityEngine.Events;
 
 public class Target : MonoBehaviour
 {
-    [SerializeField]private TargetDoorControls targetLights;
+    //Event to loosely couple targets to controller
+    [SerializeField] private UnityEvent onTargetDestroyed;
     private void OnCollisionEnter(Collision shot)
     {
         if (shot.gameObject.CompareTag("Bullet"))
         {
-            targetLights.numberOfTargets--;
+            onTargetDestroyed.Invoke();
             Destroy(gameObject);
         }
     }

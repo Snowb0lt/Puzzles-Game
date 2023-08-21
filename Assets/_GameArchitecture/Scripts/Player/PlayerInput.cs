@@ -76,7 +76,7 @@ public class PlayerInput : MonoBehaviour
     {
         _clear = true;
     }
-    void ClearInputs()
+    public void ClearInputs()
     {
         if (!_clear) return;
 

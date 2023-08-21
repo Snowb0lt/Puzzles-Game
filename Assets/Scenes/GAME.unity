@@ -10517,7 +10517,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameEnd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1615324684}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: FadeToBlack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 330585548}
+        m_TargetAssemblyTypeName: CameraMovementBehaviour, Assembly-CSharp
+        m_MethodName: MouseMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1394788050}
+        m_TargetAssemblyTypeName: PlayerInput, Assembly-CSharp
+        m_MethodName: ClearInputs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &521798042
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15629,7 +15665,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aeb918148e347140ae775b28f098bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetLights: {fileID: 1685075815}
+  onTargetDestroyed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1685075815}
+        m_TargetAssemblyTypeName: TargetDoorControls, Assembly-CSharp
+        m_MethodName: TargetControls
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!135 &779886521
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -16851,7 +16901,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aeb918148e347140ae775b28f098bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetLights: {fileID: 1833825633}
+  onTargetDestroyed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1833825633}
+        m_TargetAssemblyTypeName: TargetDoorControls, Assembly-CSharp
+        m_MethodName: TargetControls
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!135 &880606408
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -17493,7 +17557,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc819e334f007542989c5dda44c2ca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetLights: {fileID: 1833825633}
+  onTargetDestroyed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1833825633}
+        m_TargetAssemblyTypeName: TargetDoorControls, Assembly-CSharp
+        m_MethodName: TargetControls
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!135 &907729017
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -26109,7 +26187,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aeb918148e347140ae775b28f098bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetLights: {fileID: 1833825633}
+  onTargetDestroyed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1833825633}
+        m_TargetAssemblyTypeName: TargetDoorControls, Assembly-CSharp
+        m_MethodName: TargetControls
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!135 &1360571690
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -30126,7 +30218,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc819e334f007542989c5dda44c2ca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetLights: {fileID: 1685075815}
+  onTargetDestroyed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1685075815}
+        m_TargetAssemblyTypeName: TargetDoorControls, Assembly-CSharp
+        m_MethodName: TargetControls
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!135 &1580422244
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -30480,7 +30586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerHealth: {fileID: 819049176}
   _gameManager: {fileID: 568239417}
-  playerInput: {fileID: 0}
+  playerInput: {fileID: 1394788049}
   _txtHealth: {fileID: 981565265}
   _gameOverText: {fileID: 954761684}
   FTB: {fileID: 712147934}
@@ -39572,7 +39678,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc819e334f007542989c5dda44c2ca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetLights: {fileID: 1833825633}
+  onTargetDestroyed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1833825633}
+        m_TargetAssemblyTypeName: TargetDoorControls, Assembly-CSharp
+        m_MethodName: TargetControls
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!135 &2078199610
 SphereCollider:
   m_ObjectHideFlags: 0

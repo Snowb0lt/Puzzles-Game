@@ -49,7 +49,6 @@ public class GameManager : MonoBehaviour
 
     public void FreezeGame()
     {
-        camMove.MouseMovement();
         Time.timeScale = 0;
     }
     //Change Current Game State
@@ -129,7 +128,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Over!");
     }
 
-    private void GameEnd()
+    public void GameEnd()
     {
         ChangeState(GameState.GameEnd, _currentLevel);
         Debug.Log("Game has ended, you win!");

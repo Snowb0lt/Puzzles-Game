@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
 
+
 public class TargetDoorControls : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -43,5 +44,10 @@ public class TargetDoorControls : MonoBehaviour
         {
             isDoorOpen = true;
         }
+    }
+
+    public void TargetControls()
+    {
+        numberOfTargets--;
     }
 }

@@ -80,6 +80,8 @@ public class UIManager : MonoBehaviour
         FTB.SetActive(true);
         StartCoroutine(ColorFade(Color.clear, Color.black, fadeDuration));
         Invoke("DisplayEndMenu",fadeDuration);
+        Cursor.visible = true;
+        playerInput.SetActive(false);
 
     }
 

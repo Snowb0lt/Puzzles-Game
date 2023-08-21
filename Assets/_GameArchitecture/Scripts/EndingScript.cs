@@ -12,7 +12,7 @@ public class EndingScript : MonoBehaviour
     UIManager uIManager;
     GameManager gameManager;
 
-    public UnityEvent GameEnd;
+    [SerializeField] private UnityEvent GameEnd;
 
     private void Awake()
     {
@@ -25,10 +25,9 @@ public class EndingScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GameEnd?.Invoke();
-            uIManager.FadeToBlack();
             Invoke("FreezeTheGame", 3);
-            
+            GameEnd.Invoke();
+            Destroy(this);
         }
     }
 

@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MissileTarget : MonoBehaviour /*,IDestroyable*/
 {
-    [SerializeField]private TargetDoorControls targetLights;
+    //Event to loosely couple targets to controller
+    [SerializeField] private UnityEvent onTargetDestroyed;
     private void OnCollisionEnter(Collision shot)
     {
         if (shot.gameObject.CompareTag("Rocket"))
         {
-            targetLights.numberOfTargets--;
+            onTargetDestroyed.Invoke();
             Destroy(gameObject);
         }
     }
