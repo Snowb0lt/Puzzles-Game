@@ -130,8 +130,10 @@ public class GameManager : MonoBehaviour
 
     public void GameEnd()
     {
-        ChangeState(GameState.GameEnd, _currentLevel);
-        Debug.Log("Game has ended, you win!");
+        Debug.Log("Game Ends");
+        //Disable Player Input
+        _isInputActive = false;
+
     }
 
     public LevelManager GetCurrentLevel()

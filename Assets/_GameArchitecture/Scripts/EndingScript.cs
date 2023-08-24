@@ -13,6 +13,9 @@ public class EndingScript : MonoBehaviour
     GameManager gameManager;
 
     [SerializeField] private UnityEvent GameEnd;
+    [SerializeField] private UnityEvent VictoryCutscene;
+
+    [SerializeField] private int cutsceneDuration;
 
     private void Awake()
     {
@@ -25,13 +28,14 @@ public class EndingScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Invoke("FreezeTheGame", 3);
+            Invoke("EndingCutscene", cutsceneDuration);
             GameEnd.Invoke();
-            Destroy(this);
+            VictoryCutscene.Invoke();
+
         }
     }
 
-    void FreezeTheGame()
+    void EndingCutscene()
     {
         gameManager.FreezeGame();
         Cursor.visible = true;
