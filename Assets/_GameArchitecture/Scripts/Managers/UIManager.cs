@@ -64,9 +64,10 @@ public class UIManager : MonoBehaviour
 
     void OnDeath()
     {
-        _gameOverText.SetActive(true);
-        _gameManager.FreezeGame();
+        //_gameOverText.SetActive(true);
+        //_gameManager.FreezeGame();
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
         //GameManager._instance.ChangeState(GameState.GameOver, LevelManager._currentLevel);
     }
 
